@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Talentserve</title>
+  <link rel="stylesheet" href="{% static 'style_next.css' %}" />
+
+  <head>
+    <body>
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+          {{ message }}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <header>
+        <a href="#" class="logo">Talentserve<span>.</span></a>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        {% url 'suggestion_submit' as suggestion_submit%} {% csrf_token %}
+        <ul class="navigation">
+          <li>
+            <a href="{{ suggestion_submit }}" onclick="toggleMenu();"
+              >Feedback</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'logout' %}" onclick="toggleMenu();">logout</a>
+          </li>
+        </ul>
+      </header>
+      <section class="banner" id="banner">
+        <div class="content">
+          <a href="https://www.talentserve.org/" class="ourobjective"
+            >Our Objectives</a
+          >
+        </div>
+      </section>
+      <div class="copyrightText">
+        <h5>
+          Copyright 2023 <a href="#"> Talentserve </a>. All Right Reserved
+        </h5>
+      </div>
+      <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+          const header = document.querySelector("header");
+          header.classList.toggle("sticky", window.scrollY > 0);
+        });
+
+        function toggleMenu() {
+          const menuToggle = document.querySelector(".menuToggle");
+          const navigation = document.querySelector(".navigation");
+          menuToggle.classList.toggle("active");
+          navigation.classList.toggle("active");
+        }
+      </script>
+    </body>
+  </head>
+</html>

@@ -1,0 +1,90 @@
+body {
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 94%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-group button:hover {
+    background-color: #45a049;
+  }
+  
+  .form-group .forgot-password {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .form-group .signup {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .messages {
+    list-style-type: none;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .messages li {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .messages .success {
+    color: #009900;
+  }
+
+  .messages .error {
+    color: #cc0000;
+  }
+
+  .messages .info {
+    color: #0000cc;
+  }
+
+  .messages .warning {
+    color: #ff9900;
+  }

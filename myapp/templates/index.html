@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Talentserve</title>
+  <link rel="stylesheet" href="static\style.css" />
+  <head>
+    <body>
+      <header>
+        <a href="#" class="logo">Talentserve<span>.</span></a>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        {% url 'login' as login %} {% url 'signup' as signup%}
+        <ul class="navigation">
+          <li>
+            <a href="{{ signup }}" onclick="toggleMenu();">signup</a>
+          </li>
+          <li>
+            <a href="{{ login }}" onclick="toggleMenu();">login</a>
+          </li>
+        </ul>
+      </header>
+      <section class="banner" id="banner">
+        <div class="content">
+          <a href="https://www.talentserve.org/" class="ourobjective"
+            >Our Objectives</a
+          >
+        </div>
+      </section>
+      <div class="copyrightText">
+        <h5>
+          Copyright 2023 <a href="#"> Talentserve </a>. All Right Reserved
+        </h5>
+      </div>
+      <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+          const header = document.querySelector("header");
+          header.classList.toggle("sticky", window.scrollY > 0);
+        });
+
+        function toggleMenu() {
+          const menuToggle = document.querySelector(".menuToggle");
+          const navigation = document.querySelector(".navigation");
+          menuToggle.classList.toggle("active");
+          navigation.classList.toggle("active");
+        }
+      </script>
+    </body>
+  </head>
+</html>

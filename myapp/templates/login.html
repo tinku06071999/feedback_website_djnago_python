@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'style_login.css' %}" />
+  </head>
+  <body>
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="container">
+        <h2>Login</h2>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit">Login</button>
+        </div>
+        {% url 'forgot_password' as forgot_password %}
+        <div class="form-group forgot-password">
+          <a href="{{ forgot_password }}">Forgot password?</a>
+        </div>
+        {% url 'signup' as signup %}
+        <div class="form-group signup">
+          <a href="{{ signup }}">Don't Have an account?</a>
+        </div>
+      </div>
+    </form>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>
